@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aeroporto de Sâo Paulo</title>
+</head>
+<body>
+    <h1>Brasileiro ou Estrangeiro?</h1>
+    Em qual país você está morando? <input type="text" id="txtvel">
+    <input type="button" value="verificar" onclick="calcular()">
+    <div id='res'>
+
+    </div>
+    <script>
+        function calcular(){
+            var txtv = document.querySelector('input#txtvel')
+            var res = document.querySelector('div#res')
+            var txtv_str = txtv.value
+            res.innerHTML = `<p>Você é do país <strong>${txtv_str}</strong></p>`
+            if (txtv_str.toLowerCase() == 'brasil' || txtv_str.toLowerCase() == 'br') {
+                res.innerHTML += '<p>Você é brasileiro</p>'
+            } else {
+                res.innerHTML += '<p>Você é estrangeiro</p>'
+            }
+        }
+    </script>
+</body>
+</html>
